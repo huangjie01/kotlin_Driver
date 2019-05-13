@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="drawableTop" format="reference" />
+    <attr name="drawableLeft" format="reference" />
+    <attr name="drawableRight" format="reference" />
+    <attr name="drawableBottom" format="reference" />
+    <attr name="drawableWidth" format="dimension" />
+    <attr name="drawableHeight" format="dimension" />
+    <declare-styleable name="NavigationRadioButton">
+
+        <attr name="drawableTop" />
+        <attr name="drawableLeft" />
+        <attr name="drawableRight" />
+        <attr name="drawableBottom" />
+        <attr name="drawableWidth" />
+        <attr name="drawableHeight" />
+    </declare-styleable>
+</resources>

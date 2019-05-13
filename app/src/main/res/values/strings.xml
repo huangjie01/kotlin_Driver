@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Driver</string>
+    <string name="title_home">首页</string>
+    <string name="title_welfare">福利</string>
+    <string name="title_movie">电影</string>
+    <string name="title_weather">天气</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string name="title_video">视频</string>
+
 </resources>

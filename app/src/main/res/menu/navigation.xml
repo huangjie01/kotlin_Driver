@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/home_select"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navWelfare"
+        android:icon="@drawable/welfare_normal"
+        android:title="@string/title_welfare" />
+
+    <item
+        android:id="@+id/navMovie"
+        android:icon="@drawable/movie_normal"
+        android:title="@string/title_movie" />
+
+    <item
+        android:id="@+id/navWeather"
+        android:icon="@drawable/information_normal"
+        android:title="@string/title_weather" />
+
+</menu>

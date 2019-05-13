@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/mAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/mToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="#FFFFFF" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/mNavigation"
+        app:layout_constraintTop_toBottomOf="@id/mAppBarLayout" />
+
+    <RadioGroup
+        android:id="@+id/mNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_49"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.huangjie.corelib.widget.NavigationRadioButton
+            android:id="@+id/navHome"
+            style="@style/NavigationRadioBottom"
+            android:text="@string/title_home"
+            app:drawableHeight="@dimen/dp_px_23"
+            app:drawableTop="@drawable/home_select"
+            app:drawableWidth="@dimen/dp_px_23" />
+
+        <com.huangjie.corelib.widget.NavigationRadioButton
+            android:id="@+id/navWelfare"
+            style="@style/NavigationRadioBottom"
+            android:text="@string/title_welfare"
+            app:drawableHeight="@dimen/dp_px_23"
+            app:drawableTop="@drawable/welfare_normal"
+            app:drawableWidth="@dimen/dp_px_23" />
+
+        <com.huangjie.corelib.widget.NavigationRadioButton
+            android:id="@+id/navVideo"
+            style="@style/NavigationRadioBottom"
+            android:text="@string/title_video"
+            app:drawableHeight="@dimen/dp_px_23"
+            app:drawableTop="@drawable/movie_normal"
+            app:drawableWidth="@dimen/dp_px_23" />
+
+        <com.huangjie.corelib.widget.NavigationRadioButton
+            android:id="@+id/navMovie"
+            style="@style/NavigationRadioBottom"
+            android:text="@string/title_movie"
+            app:drawableHeight="@dimen/dp_px_23"
+            app:drawableTop="@drawable/movie_normal"
+            app:drawableWidth="@dimen/dp_px_23" />
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

@@ -11,7 +11,7 @@ object ActivityUtils {
     /**
      * 存储所有的Activity
      */
-    private val activityList = ArrayList<WeakReference<Activity>>()
+    private val activityList = ArrayList<WeakReference<Activity>?>()
 
 
     /**
@@ -21,7 +21,7 @@ object ActivityUtils {
         return activityList.size
     }
 
-    fun add(activity: WeakReference<Activity>) {
+    fun add(activity: WeakReference<Activity>?) {
         activityList.add(activity)
     }
 
@@ -31,7 +31,8 @@ object ActivityUtils {
     fun finishAll() {
         if (activityList.isNotEmpty()) {
             for (activityRef in activityList) {
-                val activity = activityRef.get()
+                val activity = activityRef?.get()
+
                 if (activity != null && !activity.isFinishing) {
                     activity.finish()
                 }
