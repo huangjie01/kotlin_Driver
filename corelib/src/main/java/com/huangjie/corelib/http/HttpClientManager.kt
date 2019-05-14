@@ -2,11 +2,12 @@ package com.huangjie.corelib.http
 
 import com.huangjie.corelib.global.BaseApplication
 import com.huangjie.corelib.http.intercept.HttpIntercept
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by huangjie on 2019/3/13.
  */
-object HttpManager {
+object HttpClientManager {
 
     private const val cacheSize: Long = 10 * 1024 * 1024
     private val cacheFile: File = File(BaseApplication.getContext().cacheDir, "cache")
@@ -29,11 +30,11 @@ object HttpManager {
             .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("http://gank.io/api/")
             .client(okHttpclient)
-            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(ScalarsConverterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
 
     val httpclient: HttpInterface = retrofit.create(HttpInterface::class.java)

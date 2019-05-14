@@ -1,21 +1,25 @@
 package com.huangjie.corelib.base
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.huangjie.corelib.R
 import org.greenrobot.eventbus.EventBus
 
 /**
  * Created by huangjie on 2019/3/5.
  */
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment(), IBaseView {
 
     private var mRootView: ViewGroup? = null
     private var mIsVisible: Boolean = false
     private var mHasPrepared: Boolean = false
     private var mHasInit: Boolean = false
+    private lateinit var loading: ProgressDialog
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -48,6 +52,33 @@ abstract class BaseFragment : Fragment() {
         } else {
             mIsVisible = false
             onInvisible()
+        }
+    }
+
+    override fun showLoading() {
+        if (!this::loading.isInitialized) {
+            loading = ProgressDialog(context)
+            loading.setContentView(R.layout.progress_dialog)
+            loading.setCancelable(false)
+        }
+        loading.show()
+    }
+
+    override fun hideLoading() {
+        if (this::loading.isInitialized) {
+            loading.dismiss()
+        }
+    }
+
+    override fun showToast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        if (this::loading.isInitialized && loading.isShowing) {
+            loading.dismiss()
         }
     }
 

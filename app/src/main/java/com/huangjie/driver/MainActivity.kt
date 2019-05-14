@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.util.Log
 import android.widget.RadioGroup
 import com.huangjie.corelib.base.BaseActivity
-import com.huangjie.corelib.cache.MMKVUtils
 import com.huangjie.driver.ui.home.view.HomeFragment
 import com.huangjie.driver.ui.movie.view.MovieFragment
 import com.huangjie.driver.ui.weather.view.VideoFragment

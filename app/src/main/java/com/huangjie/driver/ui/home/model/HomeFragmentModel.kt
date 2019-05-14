@@ -1,9 +1,9 @@
 package com.huangjie.driver.ui.home.model
 
 import com.huangjie.corelib.base.BaseModel
-import com.huangjie.corelib.http.HttpManager
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import com.huangjie.corelib.http.HttpClientManager
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class HomeFragmentModel : BaseModel() {
 
@@ -12,7 +12,7 @@ class HomeFragmentModel : BaseModel() {
      */
     fun loadAllGifData() {
 
-        HttpManager.httpclient.loadGifData("","","")
+        HttpClientManager.httpclient.loadGifData("","","")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
